@@ -369,7 +369,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.txtProxyDomain, 4, 3);
             this.tableLayoutPanel1.Controls.Add(this.txtProxyPassword, 4, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtProxyUsername, 4, 1);
@@ -393,15 +394,14 @@
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 7;
+            this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(737, 441);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(744, 441);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // txtProxyDomain
@@ -529,7 +529,7 @@
             this.btnCheck.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCheck.Location = new System.Drawing.Point(623, 115);
             this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(111, 22);
+            this.btnCheck.Size = new System.Drawing.Size(118, 22);
             this.btnCheck.TabIndex = 1;
             this.btnCheck.Text = "Create";
             this.btnCheck.UseVisualStyleBackColor = true;
@@ -564,7 +564,7 @@
             this.txtConsole.Name = "txtConsole";
             this.txtConsole.ReadOnly = true;
             this.txtConsole.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtConsole.Size = new System.Drawing.Size(731, 271);
+            this.txtConsole.Size = new System.Drawing.Size(738, 295);
             this.txtConsole.TabIndex = 12;
             // 
             // lblProxyUsername
@@ -616,10 +616,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 441);
+            this.ClientSize = new System.Drawing.Size(744, 441);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuBar);
             this.MainMenuStrip = this.menuBar;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(760, 800);
+            this.MinimumSize = new System.Drawing.Size(760, 480);
             this.Name = "MainForm";
             this.Text = "IRIS - Instagram Robotic Interaction Software";
             this.Load += new System.EventHandler(this.MainForm_Load);

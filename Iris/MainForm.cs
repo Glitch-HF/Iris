@@ -81,7 +81,7 @@ namespace Iris
             {
                 WriteLog("Begin creating account...");
 
-                string firstName = null, username = null, password = null, email = null;
+                string firstName = txtFirstName.Text, username = txtUsername.Text, password = txtPassword.Text, email = txtEmail.Text;
 
                 // Get First Name
                 if (string.IsNullOrWhiteSpace(firstName))
@@ -122,11 +122,11 @@ namespace Iris
                     string proxyIP = txtProxyIP.Text.Trim(), proxyUsername = null, proxyPassword = null, proxyDomain = null;
                     if(proxyIP.Contains(':'))
                     {
-                        if(int.TryParse(proxyIP.Split(',')[1], out proxyPort))
-                            proxyIP = proxyIP.Split(',')[0];
+                        if(int.TryParse(proxyIP.Split(':')[1], out proxyPort))
+                            proxyIP = proxyIP.Split(':')[0];
 
                         WriteLog("Proxy IP: {0}", proxyIP);
-                        WriteLog("Proxy Port: {1}", proxyPort);
+                        WriteLog("Proxy Port: {0}", proxyPort);
                     }
                     if(!string.IsNullOrWhiteSpace(txtProxyUsername.Text.Trim()))
                     {
@@ -140,15 +140,17 @@ namespace Iris
                         }
 
                         WriteLog("Proxy Username: {0}", proxyUsername);
-                        WriteLog("Proxy Password: {1}", proxyPassword);
+                        WriteLog("Proxy Password: {0}", proxyPassword);
                     }
                     if (!string.IsNullOrWhiteSpace(txtProxyDomain.Text.Trim()))
                         proxyDomain = txtProxyDomain.Text.Trim();
 
                     reqCreateAccount.Proxy(proxyIP, proxyUsername, proxyPassword, proxyDomain, proxyPort);
                 }
-
-                reqCreateAccount.SubmitRequest();
+                
+#if DEBUG
+                Console.WriteLine("{0}", reqCreateAccount.Response);
+                #endif
 
                 if (reqCreateAccount.Success)
                 {

@@ -58,14 +58,22 @@ namespace Iris.Requests
                         int subErrorIndex = 0;
                         foreach(var errorDetails in subError)
                         {
-                            if(errorDetails.message != null)
+                            try
                             {
-                                string errorMessage = string.Format("{0}[{1}]: {2}", error.Path, subErrorIndex++, errorDetails.message);
-                                Errors.Add(errorMessage);
+                                if (errorDetails.message != null)
+                                {
+                                    string errorMessage = string.Format("{0}[{1}]: {2}", error.Path, subErrorIndex++, errorDetails.message);
+                                    Errors.Add(errorMessage);
+                                }
+                                else if (errorDetails.ip != null)
+                                {
+                                    string errorMessage = string.Format("{0}[{1}]: {2}", error.Path, subErrorIndex++, errorDetails.ip);
+                                    Errors.Add(errorMessage);
+                                }
                             }
-                            else if(errorDetails.ip != null)
+                            catch
                             {
-                                string errorMessage = string.Format("{0}[{1}]: {2}", error.Path, subErrorIndex++, errorDetails.ip);
+                                string errorMessage = string.Format("{0}[{1}]: {2}", error.Path, subErrorIndex++, errorDetails);
                                 Errors.Add(errorMessage);
                             }
                         }
